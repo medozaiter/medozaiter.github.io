@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mustafa S. AbuZaiter | مصطفى سهيل أبو زعيتر - Portfolio</title>
-  <meta name="description" content="Software & AI Engineering Student | Offensive Cybersecurity & Penetration Tester | CEH & OSINT Specialist">
+  <meta name="description" content="Software & AI Engineering | Offensive Cybersecurity & Penetration Testing | CEH, Cisco & Google Certified">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -12,7 +13,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
@@ -24,543 +25,482 @@
             mono: ['Fira Code', 'monospace'],
           },
           colors: {
-            brand: {
-              dark: '#090D16',
-              surface: '#0F172A',
-              card: '#1E293B',
-              border: '#334155',
+            cyber: {
+              black: '#070A12',
+              card: '#0D1322',
+              cardHover: '#131B30',
+              border: '#1E293B',
               emerald: '#10B981',
-              emeraldHover: '#059669',
+              emeraldGlow: '#059669',
               cyan: '#06B6D4',
-              accent: '#3B82F6',
+              red: '#EF4444',
+              purple: '#8B5CF6'
             }
           }
         }
       }
     }
   </script>
+  
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #090D16;
+      background-color: #070A12;
       color: #F1F5F9;
+      overflow-x: hidden;
     }
     .code-font {
       font-family: 'Fira Code', monospace;
     }
-    .cyber-glow {
-      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+    .glow-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
     }
-    .cyber-glow-hover:hover {
-      box-shadow: 0 0 35px 2px rgba(16, 185, 129, 0.35);
+    .glow-emerald-card:hover {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
       border-color: #10B981;
     }
+    .glow-cyan-card:hover {
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+      border-color: #06B6D4;
+    }
     .grid-bg {
-      background-size: 30px 30px;
+      background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070A12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10B981;
     }
   </style>
 </head>
-<body class="bg-[#090D16] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-[#070A12] text-slate-100 antialiased selection:bg-emerald-500 selection:text-black">
 
-  <!-- Ambient Light Effects -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
-  <div class="fixed top-[600px] right-0 w-[500px] h-[400px] bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+  <!-- Ambient Glowing Orbs -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed top-[800px] left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[160px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed top-[1600px] right-0 w-[600px] h-[500px] bg-purple-500/10 blur-[170px] rounded-full pointer-events-none -z-10"></div>
 
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#090D16]/80 border-b border-slate-800/80">
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070A12]/85 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-          M
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 p-0.5 group-hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-full bg-[#070A12] rounded-2xl flex items-center justify-center">
+            <span class="text-transparent bg-clip-text bg-gradient-to-tr from-emerald-400 to-cyan-400 font-black text-xl code-font">MZ</span>
+          </div>
         </div>
         <div>
-          <span class="font-bold text-lg tracking-wide block group-hover:text-emerald-400 transition-colors">Mustafa AbuZaiter</span>
-          <span class="text-xs text-slate-400 block code-font">@medozaiter</span>
+          <span class="font-extrabold text-lg text-white block group-hover:text-emerald-400 transition-colors">Mustafa AbuZaiter</span>
+          <span class="text-xs text-slate-400 block code-font flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Security & AI Engineer</span>
+          </span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-emerald-400 transition-colors">عنّي</a>
-        <a href="#projects" class="hover:text-emerald-400 transition-colors">المشاريع</a>
-        <a href="#certifications" class="hover:text-emerald-400 transition-colors">الشهادات والاعتمادات</a>
-        <a href="#speaking" class="hover:text-emerald-400 transition-colors">ورش العمل</a>
-        <a href="#skills" class="hover:text-emerald-400 transition-colors">المهارات التقنية</a>
-        <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معي</a>
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
+        <a href="#about" class="hover:text-emerald-400 transition-colors">نبذة</a>
+        <a href="#terminal" class="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400">
+          <i data-lucide="terminal" class="w-4 h-4"></i>
+          <span>الطرفية (Terminal)</span>
+        </a>
+        <a href="#certifications" class="hover:text-emerald-400 transition-colors">الشهادات</a>
+        <a href="#skills" class="hover:text-emerald-400 transition-colors">المهارات والترسانة</a>
+        <a href="#projects" class="hover:text-emerald-400 transition-colors">المشاريع والأعمال</a>
+        <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل</a>
       </nav>
 
       <!-- Action Button -->
-      <div class="flex items-center gap-4">
-        <a href="mailto:medo.msz.2006@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-semibold text-sm transition-all shadow-sm">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          <span>راسلني مباشرة</span>
+      <div class="flex items-center gap-3">
+        <a href="mailto:medo.msz.2006@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20 hover:scale-105">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>تواصل معي</span>
         </a>
-        <a href="https://github.com/medozaiter" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all">
+        <a href="https://github.com/medozaiter" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 flex items-center justify-center text-slate-300 hover:text-white transition-all">
           <i data-lucide="github" class="w-5 h-5"></i>
         </a>
       </div>
+
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-24 pb-20 overflow-hidden grid-bg border-b border-slate-800/60">
+  <section class="relative pt-24 pb-20 overflow-hidden grid-bg border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <!-- Status Badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold mb-8 animate-pulse">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-        <span>طالب هندسة برمجيات وذكاء اصطناعي • باحث أمن سيبراني</span>
+      <!-- Interactive Status Pill -->
+      <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-sm font-semibold mb-8 shadow-inner">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>طالب هندسة برمجيات وذكاء اصطناعي • باحث أمن سيبراني واختراق أخلاقي</span>
       </div>
 
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
         مصطفى سهيل أبو زعيتر
-        <span class="block text-2xl sm:text-3xl lg:text-4xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 code-font" dir="ltr">
+        <span class="block text-2xl sm:text-4xl font-extrabold mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 code-font" dir="ltr">
           Mustafa S. AbuZaiter
         </span>
       </h1>
 
       <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 leading-relaxed mb-10">
-        أجمع بين شغف <strong class="text-emerald-400 font-semibold">الأمن السيبراني الهجومي واختبار الاختراق</strong> مع هندسة <strong class="text-cyan-400 font-semibold">أنظمة الذكاء الاصطناعي والأتمتة</strong> لبناء وتأمين حلول برمجية ذكية تحمي المستخدمين وتصنع فارقاً حقيقياً.
+        هندسة المنصات الذكية بالذكاء الاصطناعي مع تأمين البنية الرقمية الشاملة واختبار الاختراق. معتمد رسمياً من 
+        <strong class="text-emerald-400">Google</strong>، 
+        <strong class="text-cyan-400">Cisco</strong>، و 
+        <strong class="text-red-400">EC-Council</strong>.
       </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="#projects" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-base transition-all shadow-lg shadow-emerald-500/25">
-          <i data-lucide="layout-grid" class="w-5 h-5"></i>
-          <span>استعراض مشاريعي</span>
+        <a href="#certifications" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-base transition-all shadow-xl shadow-emerald-500/25 hover:scale-105">
+          <i data-lucide="award" class="w-5 h-5"></i>
+          <span>استعراض الشهادات المعتمدة</span>
         </a>
-        <a href="#certifications" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-base transition-all">
-          <i data-lucide="award" class="w-5 h-5 text-emerald-400"></i>
-          <span>الشهادات المعتمدة</span>
+        <a href="#terminal" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 text-white font-bold text-base transition-all">
+          <i data-lucide="terminal" class="w-5 h-5 text-emerald-400"></i>
+          <span>فتح الطرفية التفاعلية</span>
         </a>
       </div>
 
-      <!-- Quick Metrics Counter -->
+      <!-- Animated Counters -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16 pt-12 border-t border-slate-800/80">
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl font-extrabold text-emerald-400 code-font">+90</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">ساعة تدريبية بالأمن السيبراني</div>
+        <div class="p-5 rounded-2xl bg-[#0D1322] border border-slate-800">
+          <div class="text-3xl sm:text-4xl font-black text-emerald-400 code-font">6+</div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">شهادات احترافية معتمدة</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl font-extrabold text-cyan-400 code-font">3+</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">مشاريع برمجية في بيئة الإنتاج</div>
+        <div class="p-5 rounded-2xl bg-[#0D1322] border border-slate-800">
+          <div class="text-3xl sm:text-4xl font-black text-cyan-400 code-font">+90</div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">ساعة تدريبية بالأمن السيبراني</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl font-extrabold text-emerald-400 code-font">CEH v1</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">اختراق أخلاقي واختبار اختراق</div>
+        <div class="p-5 rounded-2xl bg-[#0D1322] border border-slate-800">
+          <div class="text-3xl sm:text-4xl font-black text-purple-400 code-font">FastAPI</div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">بناء منصات الذكاء الاصطناعي</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl font-extrabold text-cyan-400 code-font">1</div>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">ورشة عمل جامعية قمت بتقديمها</div>
+        <div class="p-5 rounded-2xl bg-[#0D1322] border border-slate-800">
+          <div class="text-3xl sm:text-4xl font-black text-emerald-400 code-font">100%</div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">شغف والتزام بالتميز</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 border-b border-slate-800/60">
+  <!-- Interactive Terminal Section (Recruiter Magnet) -->
+  <section id="terminal" class="py-20 border-b border-slate-800/80 bg-[#070A12]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-8">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest code-font">Interactive Cyber Console</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">الطرفية التفاعلية (Terminal)</h2>
+        <p class="text-sm text-slate-400 mt-1">اكتب الأوامر لاستكشاف بيانات مصطفى مباشرة (جرّب: help, whoami, certs, skills, contact, clear)</p>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="rounded-2xl bg-[#0B0F19] border border-slate-800 shadow-2xl overflow-hidden code-font text-sm">
+        <!-- Terminal Header Bar -->
+        <div class="px-4 py-3 bg-[#0E1524] border-b border-slate-800 flex items-center justify-between" dir="ltr">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-xs text-slate-400 ml-2 font-mono">mustafa@cyber-terminal:~</span>
+          </div>
+          <span class="text-xs text-slate-500 font-mono">bash v5.2</span>
+        </div>
+
+        <!-- Terminal Body -->
+        <div class="p-6 text-slate-300 space-y-3 min-h-[300px] max-h-[420px] overflow-y-auto" id="terminalOutput" dir="ltr">
+          <div class="text-emerald-400 font-semibold">Welcome to Mustafa S. AbuZaiter's Cyber Interactive Terminal.</div>
+          <div class="text-slate-400">Type <span class="text-cyan-400 font-bold">help</span> to view available commands.</div>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <div class="px-6 py-4 bg-[#0E1524] border-t border-slate-800 flex items-center gap-2" dir="ltr">
+          <span class="text-emerald-400 font-bold">guest@medozaiter:~$</span>
+          <input type="text" id="terminalInput" class="flex-1 bg-transparent text-white outline-none font-mono caret-emerald-400 placeholder:text-slate-600" placeholder="Type command here (e.g. certs)..." autocomplete="off" autofocus />
+          <button id="terminalBtn" class="px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold font-mono">Run</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications Grid (Visual Logos & Badges) -->
+  <section id="certifications" class="py-20 border-b border-slate-800/80 bg-[#090D18]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">نبذة شخصية</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">من أنا؟</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
-          <p>
-            أنا <strong>مصطفى سهيل أبو زعيتر</strong>، طالب في <strong>كلية هندسة البرمجيات والذكاء الاصطناعي بجامعة فلسطين</strong>. متخصص في بناء المنصات الرقمية الحديثة المعتمدة على الذكاء الاصطناعي مع التركيز العميق على <strong>الأمن السيبراني وحماية البنية البرمجية (DevSecOps & Application Security)</strong>.
-          </p>
-          <p>
-            أمتلك خبرة عملية في اختبار الاختراق (Penetration Testing)، استغلال وفحص ثغرات التحكم بالوصول (Broken Access Control & IDOR)، جمع المعلومات الاستخباراتية مفتوحة المصدر (OSINT)، والهندسة الاجتماعية (Social Engineering).
-          </p>
-          <p>
-            أؤمن بأن البرمجة ليست مجرد كتابة سطور كود، بل هي فن حل المشكلات الواقعية، وأسعى دوماً لمشاركة المعرفة مع زملائي والمجتمع التقني.
-          </p>
-          <div class="flex items-center gap-3 pt-2 text-slate-400 text-sm">
-            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
-            <span>غزة — فلسطين 🇵🇸 | University of Palestine</span>
-          </div>
-        </div>
-
-        <!-- Identity / Highlights Card -->
-        <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 cyber-glow relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
-          <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-            <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
-            <span>الركائز الأساسية لخبرتي</span>
-          </h3>
-          <ul class="space-y-4 text-slate-300">
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 mt-2.5"></span>
-              <div>
-                <strong class="text-white block">Offensive Security & Red Teaming</strong>
-                <span class="text-sm text-slate-400">اختبار الاختراق، فحص ثغرات OWASP Top 10، تحليل وتأمين الـ APIs.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 mt-2.5"></span>
-              <div>
-                <strong class="text-white block">AI & Backend Automation</strong>
-                <span class="text-sm text-slate-400">تطوير خوادم سريعة عبر FastAPI، تكامل نماذج Gemini الذكية، وبوتات التيليجرام.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 mt-2.5"></span>
-              <div>
-                <strong class="text-white block">Technical Leadership & Mentorship</strong>
-                <span class="text-sm text-slate-400">تقديم ورش العمل التقنية وإرشاد الطلاب في بناء هويتهم البرمجية.</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Keynote / Workshop Section -->
-  <section id="speaking" class="py-20 border-b border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 border border-emerald-500/30 relative overflow-hidden cyber-glow">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4">
-            <i data-lucide="mic" class="w-3.5 h-3.5"></i>
-            <span>ورش عمل ومشاركات مجتمعية</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-            تقديم ورشة عمل: "اصنع براندك التقني"
-          </h3>
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-            بدعوة وتقدير من <strong>كلية هندسة البرمجيات والذكاء الاصطناعي — جامعة فلسطين</strong>، قمت بتقديم ورشة تدريبية متخصصة لمساعدة طلبة الهندسة في بناء هويتهم المهنية، عرض مشاريعهم التقنية، والتميز في سوق العمل البرمجي.
-          </p>
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="certificates/university-of-palestine-speaker-honor.pdf" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm transition-all shadow-md">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>عرض شهادة الشكر الرسمية (PDF)</span>
-            </a>
-            <span class="text-sm text-slate-400">10 سبتمبر 2026 • مقر جامعة فلسطين</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 border-b border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">أعمالي البرمجية</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">مشاريع رائدة قمت ببنائها</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <!-- Project 1: EduAtlas -->
-        <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all cyber-glow-hover flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Full-Stack AI Platform</span>
-              <div class="flex items-center gap-2 text-slate-400">
-                <a href="https://github.com/medozaiter" target="_blank" class="hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-                <a href="https://eduatlas-irxv.onrender.com/" target="_blank" class="hover:text-emerald-400 transition-colors"><i data-lucide="external-link" class="w-5 h-5"></i></a>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">🧭 EduAtlas (ScholarPilot AI)</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              منصة ذكاء اصطناعي رائدة لاكتشاف وتحليل المنح الدراسية. تم بناؤها باستخدام <strong>FastAPI</strong> وقواعد بيانات <strong>PostgreSQL (Neon)</strong> مع تكامل مباشر مع <strong>Google Gemini API</strong> وحماية أمنية مشددة وفق معايير OWASP للحد من الهجمات.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-medium text-slate-400 code-font">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-400">FastAPI</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-400">Gemini AI</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">Neon PostgreSQL</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">OWASP Hardening</span>
-            </div>
-            <div class="mt-6 flex items-center gap-4">
-              <a href="https://eduatlas-irxv.onrender.com/" target="_blank" class="text-sm font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5">
-                <span>معاينة المنصة الحية</span>
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: UPINAR Notifier -->
-        <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all cyber-glow-hover flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Academic Automation</span>
-              <a href="https://github.com/medozaiter" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">🎓 UPINAR Notifier</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              نظام أتمتة شامل لطلبة جامعة فلسطين. يقوم بالاتصال الآمن ببوابة الطالب ونظام الموديل (اليوبينار) لمراقبة الواجبات، الكويزات، والمحاضرات الجديدة وإرسال إشعارات فورية عبر Telegram.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-medium text-slate-400 code-font">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-400">Python Async</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-400">Telegram Bot API</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">Session Scraper</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">SSO Auth</span>
-            </div>
-            <div class="mt-6 flex items-center gap-4">
-              <a href="https://github.com/medozaiter" target="_blank" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
-                <span>استعراض الكود على جيت هب</span>
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: Scholarship Telegram Bot -->
-        <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all cyber-glow-hover flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI Assistant Bot</span>
-              <a href="https://github.com/medozaiter/scholarship-telegram-bot" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">🤖 Scholarship Finder Bot</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              بوت أتمتة ذكي مبني بواسطة <code>python-telegram-bot v20</code> والذكاء الاصطناعي من Google لجمع المنح الدولية المفتوحة وتصفيتها بناءً على معايير صارمة للطلاب الفلسطينيين والدوليين.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-medium text-slate-400 code-font">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-400">Telegram Bot</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-400">Google GenAI</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">Render VPS</span>
-            </div>
-            <div class="mt-6 flex items-center gap-4">
-              <a href="https://github.com/medozaiter/scholarship-telegram-bot" target="_blank" class="text-sm font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5">
-                <span>المستودع الرسمي</span>
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4: Cyber Recon & OSINT Toolkit -->
-        <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all cyber-glow-hover flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">Security & Recon</span>
-              <a href="https://github.com/medozaiter" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">🛡️ Cyber Recon & Security Toolkit</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              مجموعة سكريبتات وأدوات أمنية لجمع المعلومات الاستخباراتية (OSINT)، فحص ثغرات التحكم بالوصول (IDOR)، وتحليل المنافذ وحزم الشبكات للمساعدة في عمليات اختبار الاختراق المنضبط.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-medium text-slate-400 code-font">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-red-400">OSINT</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-purple-400">IDOR Testing</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800">Kali Linux</span>
-            </div>
-            <div class="mt-6 flex items-center gap-4">
-              <a href="https://github.com/medozaiter" target="_blank" class="text-sm font-bold text-red-400 hover:text-red-300 flex items-center gap-1.5">
-                <span>استعراض الأدوات</span>
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="py-20 border-b border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">الاعتمادات الرسمية</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">الشهادات والبرامج التدريبية المعتمدة</h2>
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Accreditations & Credentials</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">الشهادات والاعتمادات الرسمية</h2>
+        <p class="text-slate-400 text-sm mt-2">شهادات معتمدة في مجالات الأمن السيبراني، الذكاء الاصطناعي، وهندسة البرمجيات</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Cert 1 -->
-        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 mb-4">
-              <i data-lucide="shield-alert" class="w-6 h-6"></i>
-            </div>
-            <h4 class="font-bold text-lg text-white mb-2 leading-snug">Offensive Cybersecurity & Penetration Testing</h4>
-            <p class="text-xs text-slate-400 mb-4">شركة أصل البداية للاستشارات والتدريب (60 ساعة تدريبية مكثفة).</p>
-            <div class="text-xs text-slate-500 space-y-1 code-font mb-6">
-              <div>رقم الشهادة: Bid-0000137</div>
-              <div>الترخيص: 57642 (غزة - فلسطين)</div>
-            </div>
+        <!-- Cert 1: Google Cybersecurity -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-cyan-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
-          <a href="certificates/offensive-cybersecurity-penetration-testing.pdf" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-emerald-400 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 border border-slate-700">
-            <i data-lucide="eye" class="w-4 h-4"></i>
-            <span>معاينة الشهادة (PDF)</span>
-          </a>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Google Official</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Google Cybersecurity Professional Certificate</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            شهادة احترافية شاملة من Google تغطي إدارة المخاطر، استجابة الحوادث، التحليل الأمني، بايثون وأوامر لينكس.
+          </p>
         </div>
 
-        <!-- Cert 2 -->
-        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
-              <i data-lucide="shield" class="w-6 h-6"></i>
-            </div>
-            <h4 class="font-bold text-lg text-white mb-2 leading-snug">Professional Cybersecurity Course - CEH V1</h4>
-            <p class="text-xs text-slate-400 mb-4">بداية للاستشارات والتدريب (30 ساعة تدريبية بالأمن والاختراق الأخلاقي).</p>
-            <div class="text-xs text-slate-500 space-y-1 code-font mb-6">
-              <div>رقم الشهادة: BIDPC20260821</div>
-              <div>التاريخ: أغسطس 2026</div>
-            </div>
+        <!-- Cert 2: Cisco Cybersecurity -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-cyan-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+            <i data-lucide="network" class="w-6 h-6"></i>
           </div>
-          <a href="certificates/ceh-v1-certification.jpg" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-emerald-400 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 border border-slate-700">
-            <i data-lucide="eye" class="w-4 h-4"></i>
-            <span>معاينة الشهادة (صورة)</span>
-          </a>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cisco Networking Academy</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Cisco: Introduction to Cybersecurity</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            أساسيات حماية الشبكات، الدفاع السيبراني، تحليل الثغرات وسرية وسلامة البيانات وفق معايير Cisco.
+          </p>
         </div>
 
-        <!-- Cert 3 -->
-        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
-              <i data-lucide="key" class="w-6 h-6"></i>
-            </div>
-            <h4 class="font-bold text-lg text-white mb-2 leading-snug">Broken Access Control & IDOR Exploitation</h4>
-            <p class="text-xs text-slate-400 mb-4">أكاديمية Green Armor بالتعاون مع فرع IEEE الطلابي في الجامعة الإسلامية.</p>
-            <div class="text-xs text-slate-500 space-y-1 code-font mb-6">
-              <div>رمز التحقق: 32b368e624c460eb</div>
-              <div>Green Armor Academy</div>
-            </div>
+        <!-- Cert 3: Cisco SOC -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-cyan-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-4">
+            <i data-lucide="radio" class="w-6 h-6"></i>
           </div>
-          <a href="certificates/green-armor-ieee-idor-workshop.pdf" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-emerald-400 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 border border-slate-700">
-            <i data-lucide="eye" class="w-4 h-4"></i>
-            <span>معاينة الشهادة (PDF)</span>
-          </a>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">Cisco CyberOps</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Cisco: Introduction to SOC & CyberOps</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            مفاهيم مراكز العمليات الأمنية (SOC)، مراقبة حركة الشبكة، مراقبة التهديدات والاستجابة السريعة للهجمات.
+          </p>
         </div>
 
-        <!-- Cert 4 -->
-        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
-              <i data-lucide="code" class="w-6 h-6"></i>
-            </div>
-            <h4 class="font-bold text-lg text-white mb-2 leading-snug">Python Programming & Automation</h4>
-            <p class="text-xs text-slate-400 mb-4">إتقان لغة بايثون، الأتمتة المتقدمة، بناء الخوادم وبوتات التواصل.</p>
-            <div class="text-xs text-slate-500 space-y-1 code-font mb-6">
-              <div>الحالة: مكتمل بنجاح (Certificate of Completion)</div>
-            </div>
+        <!-- Cert 4: Offensive Cybersecurity -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-emerald-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 mb-4">
+            <i data-lucide="crosshair" class="w-6 h-6"></i>
           </div>
-          <div class="w-full py-2 px-3 rounded-xl bg-slate-800/40 text-center text-slate-400 text-xs font-medium">
-            معتمد من مسار التدريب البرمجي
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">Offensive Security</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Offensive Cybersecurity & Penetration Testing</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            60 ساعة تدريبية مكثفة في تقنيات اختبار الاختراق العملي، اختراق الشبكات، واستغلال الثغرات البرمجية.
+          </p>
+        </div>
+
+        <!-- Cert 5: CEH v1 -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-emerald-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">Ethical Hacking</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Professional Cybersecurity Course - CEH v1</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            تأهيل شامل لمفاهيم القرصنة الأخلاقية، جمع المعلومات، مسح المنافذ، وهندسة الحماية الاستباقية.
+          </p>
+        </div>
+
+        <!-- Cert 6: IEEE IDOR -->
+        <div class="p-6 rounded-3xl bg-[#0D1322] border border-slate-800 glow-emerald-card transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+            <i data-lucide="unlock" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">IEEE & Green Armor</span>
+          <h3 class="font-bold text-lg text-white mt-3 mb-2">Broken Access Control & IDOR Exploitation</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            فحص متقدم لثغرات الـ API وانتحال المعرفات والتحكم غير المصرح به في صلاحيات المستخدمين.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Arsenal & Logos Grid -->
+  <section id="skills" class="py-20 border-b border-slate-800/80 bg-[#070A12]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Tech Stack & Weaponry</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">الترسانة التقنية والمهارات</h2>
+        <p class="text-slate-400 text-sm mt-2">أدوات ولغات وتقنيات أعمل بها بشكل يومي</p>
+      </div>
+
+      <!-- Skill Categories -->
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Category 1: Security -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">الأمن السيبراني والاختراق</h3>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">Kali Linux</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">Wireshark</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">Metasploit</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">OWASP Top 10</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">IDOR Testing</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">OSINT Recon</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-red-500 transition-colors">Social Engineering</span>
           </div>
         </div>
 
-        <!-- Cert 5 -->
-        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
-              <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        <!-- Category 2: AI & Python -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-bold text-lg text-white mb-2 leading-snug">Introduction to Data Science & Analytics</h4>
-            <p class="text-xs text-slate-400 mb-4">تحليل البيانات، المفاهيم الأساسية لنماذج الذكاء الاصطناعي ومكتبات Python.</p>
-            <div class="text-xs text-slate-500 space-y-1 code-font mb-6">
-              <div>الحالة: مكتمل بنجاح (Certificate of Completion)</div>
-            </div>
+            <h3 class="text-xl font-bold text-white">الذكاء الاصطناعي وبايثون</h3>
           </div>
-          <div class="w-full py-2 px-3 rounded-xl bg-slate-800/40 text-center text-slate-400 text-xs font-medium">
-            معتمد من مسار التدريب البرمجي
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Python 3</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">FastAPI</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Google Gemini API</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Asyncio Automation</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Telegram Bot API</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Pandas & NumPy</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-emerald-500 transition-colors">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Cloud & Databases -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <i data-lucide="cloud" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">السحابة وقواعد البيانات</h3>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">PostgreSQL</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Neon Cloud DB</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Render VPS</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Git & GitHub</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Linux / Bash</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Tailwind CSS</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-bold hover:border-cyan-500 transition-colors">Postman API Testing</span>
           </div>
         </div>
 
       </div>
+
+      <!-- Skill Icons Row -->
+      <div class="mt-14 p-6 rounded-3xl bg-[#0B0F19] border border-slate-800/80 text-center">
+        <span class="text-xs font-semibold text-slate-400 block mb-4 uppercase tracking-wider">DevIcons Quick Bar</span>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://skillicons.dev/icons?i=python,fastapi,flask,postgres,linux,bash,git,github,postman,tailwind,vscode&theme=dark" alt="Tech Icons" />
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 border-b border-slate-800/60">
+  <!-- Projects / Practical Capabilities Section -->
+  <section id="projects" class="py-20 border-b border-slate-800/80 bg-[#090D18]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">الترسانة التقنية</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">المهارات والأدوات التي أتقنها</h2>
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Engineering Highlights</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">ما قمت ببنائه وهندسته</h2>
+        <p class="text-slate-400 text-sm mt-2">نماذج عملية من مشاريع وأنظمة أتمتة حقيقية تم نشرها واختبارها</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         
-        <!-- Col 1 -->
-        <div class="p-6 rounded-3xl bg-slate-900/70 border border-slate-800">
-          <h3 class="font-bold text-lg text-white mb-6 flex items-center gap-3">
-            <i data-lucide="shield-check" class="w-5 h-5 text-red-400"></i>
-            <span>الأمن السيبراني والاختراق</span>
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Penetration Testing</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">CEH Concepts</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">IDOR & Access Control</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">OSINT Reconnaissance</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Social Engineering</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">OWASP Top 10</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Kali Linux</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Wireshark</span>
+        <!-- Showcase 1 -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-bold text-emerald-400 code-font">Full-Stack AI Platform</span>
+            <h3 class="text-2xl font-bold text-white mt-2 mb-3">منصة الذكاء الاصطناعي لاكتشاف الفرص</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              منصة سحابية متكاملة مدعومة بـ Google Gemini API ونظام FastAPI، مع قاعدة بيانات سحابية وتأمين كامل ضد هجمات الويب وحماية الجلسات.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs code-font">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-400">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-cyan-400">Gemini</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-purple-400">OWASP</span>
           </div>
         </div>
 
-        <!-- Col 2 -->
-        <div class="p-6 rounded-3xl bg-slate-900/70 border border-slate-800">
-          <h3 class="font-bold text-lg text-white mb-6 flex items-center gap-3">
-            <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
-            <span>البرمجة والذكاء الاصطناعي</span>
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Python 3</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">FastAPI</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Flask</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Google Gemini API</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Pandas & NumPy</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Data Science Basics</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Web Automation</span>
+        <!-- Showcase 2 -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-bold text-cyan-400 code-font">Telegram Bot & Scraper</span>
+            <h3 class="text-2xl font-bold text-white mt-2 mb-3">بوتات الأتمتة الأكاديمية الذكية</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              نظام أتمتة غير متزامن يتعامل مع بوابات تسجيل الدخول الجامعية والـ SSO، ويراقب المحتوى الجديد ويرسل إشعارات فورية عبر تيليجرام.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs code-font">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-cyan-400">Python Async</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-400">Telegram API</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-amber-400">Session Auth</span>
           </div>
         </div>
 
-        <!-- Col 3 -->
-        <div class="p-6 rounded-3xl bg-slate-900/70 border border-slate-800">
-          <h3 class="font-bold text-lg text-white mb-6 flex items-center gap-3">
-            <i data-lucide="server" class="w-5 h-5 text-emerald-400"></i>
-            <span>قواعد البيانات والسحابة</span>
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">PostgreSQL</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Neon Cloud DB</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Render Deployment</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Git & GitHub</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Linux & Bash</span>
-            <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Tailwind CSS</span>
+        <!-- Showcase 3 -->
+        <div class="p-8 rounded-3xl bg-[#0D1322] border border-slate-800 hover:border-red-500/50 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 mb-6">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-bold text-red-400 code-font">Security & Recon Toolkit</span>
+            <h3 class="text-2xl font-bold text-white mt-2 mb-3">أدوات فحص الثغرات والاستخبارات</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              مجموعة سكربتات خاصة لجمع معلومات الـ OSINT وفحص ثغرات التحكم بالوصول (IDOR) واختبار سيناريوهات الهندسة الاجتماعية.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs code-font">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-red-400">IDOR</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-purple-400">OSINT</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-400">Kali Tools</span>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-24">
+  <!-- Contact CTA -->
+  <section id="contact" class="py-24 bg-[#070A12]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="p-10 sm:p-14 rounded-3xl bg-slate-900/80 border border-slate-800 cyber-glow">
-        <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">دعنا نتواصل</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">هل لديك فكرة أو فرصة تعاون؟</h2>
-        <p class="text-slate-300 max-w-xl mx-auto mb-8 text-base sm:text-lg">
-          أرحب دوماً بفرص التدريب، المشاريع البرمجية، الأبحاث الأمنية، والتعاون التقني. يسعدني التواصل معك!
+      <div class="p-12 sm:p-16 rounded-3xl bg-gradient-to-b from-[#0D1322] to-[#070A12] border border-emerald-500/30 glow-emerald">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Direct Contact</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-4">جاهز للتعاون وبناء حلول استثنائية</h2>
+        <p class="text-slate-300 max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed">
+          سواء كنت تبحث عن مطور ذكاء اصطناعي، خبير أمن سيبراني واختبار اختراق، أو شريك لمشروع تقني ملهم، يسعدني التواصل معك فوراً!
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="mailto:medo.msz.2006@gmail.com" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-base transition-all shadow-lg shadow-emerald-500/20">
+          <a href="mailto:medo.msz.2006@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base transition-all shadow-xl shadow-emerald-500/25 hover:scale-105">
             <i data-lucide="mail" class="w-5 h-5"></i>
             <span>medo.msz.2006@gmail.com</span>
           </a>
-          <a href="https://github.com/medozaiter" target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-base transition-all">
+          <a href="https://github.com/medozaiter" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold text-base transition-all">
             <i data-lucide="github" class="w-5 h-5"></i>
             <span>GitHub @medozaiter</span>
           </a>
@@ -570,15 +510,90 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-slate-800/80 text-center text-sm text-slate-500">
+  <footer class="py-10 border-t border-slate-800/80 bg-[#070A12] text-center text-sm text-slate-500 code-font">
     <div class="max-w-7xl mx-auto px-4">
-      <p>© 2026 Mustafa S. AbuZaiter (مصطفى سهيل أبو زعيتر). تم التطوير والاستضافة عبر GitHub Pages.</p>
+      <p>© 2026 Mustafa S. AbuZaiter (مصطفى سهيل أبو زعيتر) • Built with Pride & Hosted on GitHub Pages</p>
     </div>
   </footer>
 
+  <!-- Terminal Script -->
   <script>
-    // Initialize Lucide icons
     lucide.createIcons();
+
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalOutput = document.getElementById('terminalOutput');
+    const terminalBtn = document.getElementById('terminalBtn');
+
+    const commands = {
+      help: `Available commands:
+  - <span class="text-cyan-400">whoami</span>       : About Mustafa
+  - <span class="text-cyan-400">certs</span>        : List all official certifications
+  - <span class="text-cyan-400">skills</span>       : Tech stack & tools
+  - <span class="text-cyan-400">experience</span>   : Core engineering capabilities
+  - <span class="text-cyan-400">contact</span>      : Email and links
+  - <span class="text-cyan-400">clear</span>        : Clear terminal output`,
+      
+      whoami: `<span class="text-emerald-400 font-bold">Mustafa S. AbuZaiter</span>
+Software & AI Engineering Student at University of Palestine.
+Specializing in Offensive Cybersecurity, Penetration Testing (CEH, IDOR, OSINT), and AI Web Systems.`,
+      
+      certs: `<span class="text-emerald-400 font-bold">Official Certifications:</span>
+  1. Google Cybersecurity Professional Certificate
+  2. Cisco: Introduction to Cybersecurity
+  3. Cisco: Introduction to SOC & CyberOps
+  4. Offensive Cybersecurity & Penetration Testing (60 Hours)
+  5. Professional Cybersecurity Course - CEH v1 (30 Hours)
+  6. Broken Access Control & IDOR Exploitation (IEEE & Green Armor)
+  7. Python Programming & Automation Masterclass
+  8. Introduction to Data Science & Analytics`,
+      
+      skills: `<span class="text-emerald-400 font-bold">Technical Stack:</span>
+  - <span class="text-red-400">Offensive Security:</span> Kali Linux, Wireshark, Metasploit, IDOR Testing, OWASP Top 10, OSINT.
+  - <span class="text-cyan-400">AI & Backend:</span> Python 3, FastAPI, Google Gemini API, Asyncio, Telegram Bots.
+  - <span class="text-purple-400">Database & Cloud:</span> PostgreSQL (Neon), Render VPS, Linux Bash, Git.`,
+      
+      experience: `<span class="text-emerald-400 font-bold">Core Capabilities:</span>
+  - Built full-stack AI web platforms with FastAPI & Google Gemini.
+  - Implemented OWASP security hardening & rate-limiting.
+  - Developed academic automation bots & scrapers with SSO auth.
+  - Conducted penetration tests & access control vulnerability audits.`,
+      
+      contact: `<span class="text-emerald-400 font-bold">Get In Touch:</span>
+  - Email  : medo.msz.2006@gmail.com
+  - GitHub : https://github.com/medozaiter`
+    };
+
+    function runCommand() {
+      const rawCmd = terminalInput.value.trim();
+      const cmd = rawCmd.toLowerCase();
+      if (!rawCmd) return;
+
+      const userLine = document.createElement('div');
+      userLine.innerHTML = `<span class="text-emerald-400 font-bold">guest@medozaiter:~$</span> <span class="text-white">${rawCmd}</span>`;
+      terminalOutput.appendChild(userLine);
+
+      const responseLine = document.createElement('div');
+      responseLine.className = 'text-slate-300 pl-4 border-l-2 border-emerald-500/30 my-2';
+
+      if (cmd === 'clear') {
+        terminalOutput.innerHTML = '';
+        terminalInput.value = '';
+        return;
+      } else if (commands[cmd]) {
+        responseLine.innerHTML = commands[cmd];
+      } else {
+        responseLine.innerHTML = `<span class="text-red-400">command not found: ${rawCmd}</span>. Type <span class="text-cyan-400 font-bold">help</span> for assistance.`;
+      }
+
+      terminalOutput.appendChild(responseLine);
+      terminalInput.value = '';
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    terminalBtn.addEventListener('click', runCommand);
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') runCommand();
+    });
   </script>
 </body>
 </html>
